@@ -1,4 +1,8 @@
 import React from 'react';
+import Avtar from './component/Avatar';
+import Heading from './component/Heading';
+import Showcase from './component/Showcase';
+import {slidesData, slidesData2} from './data';
 
 const App = () => {
   return (
@@ -17,9 +21,8 @@ const App = () => {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center py-24">
-        <h2 className="text-5xl font-bold mb-4">Hey there! I’m Abhijeet Singh</h2>
-        <p className="text-xl mb-6">A tech enthusiast crafting solutions that inspire and innovate</p>
-        <button className="mt-6 bg-white text-blue-500 px-8 py-3 rounded-full shadow-lg hover:bg-gray-200 transition">Explore My Work</button>
+        <Avtar></Avtar>
+        <Heading></Heading>
       </section>
 
       {/* About Section */}
@@ -34,24 +37,25 @@ const App = () => {
       <section id="projects" className="bg-gray-100 py-20">
         <div className="container mx-auto px-6">
           <h3 className="text-3xl font-bold mb-10 text-center text-gray-800">My Projects</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Project 1 */}
-            <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition">
+            <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition ">
               <h4 className="text-xl font-bold mb-3">Mission 1 Million</h4>
               <p className="text-gray-600">An online learning platform to empower 1 million learners with skill-based knowledge. Built using the MERN stack.</p>
+              <Showcase slides={slidesData} ></Showcase>
+              <a href="https://m1m.vercel.app/" target="_blank">
+              <button   className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-600 transition"  >Vist </button></a>
             </div>
-
             {/* Project 2 */}
             <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition">
               <h4 className="text-xl font-bold mb-3">Portfolio Builder</h4>
               <p className="text-gray-600">A customizable portfolio generator for developers. Includes live previews and deployment options.</p>
+              <Showcase slides={slidesData2} ></Showcase>
+              <a href="http://galasitsolutions.com/" target="_blank">
+              <button   className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-600 transition"  >Vist </button></a>
+
             </div>
 
-            {/* Project 3 */}
-            <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition">
-              <h4 className="text-xl font-bold mb-3">Competitive Programming Dashboard</h4>
-              <p className="text-gray-600">A tool to track coding progress across platforms like LeetCode and Codeforces, with personalized analytics.</p>
-            </div>
           </div>
         </div>
       </section>
