@@ -10,6 +10,7 @@ import './swiper.css';
 
 // import required modules
 import { EffectCreative ,Autoplay, Pagination, Navigation } from 'swiper/modules';
+import AnimatedSection from './AnimatedSection';
 
 export default function Showcase( {slides} ) {
 
@@ -25,7 +26,8 @@ export default function Showcase( {slides} ) {
 
   return (
     <>
-      <Swiper
+    <AnimatedSection>
+    <Swiper
         grabCursor={false}
         autoplay={{
             delay: 2500,
@@ -46,10 +48,12 @@ export default function Showcase( {slides} ) {
       >
               {slides.map((slide) => (
         <SwiperSlide key={slide.id}>
-          <img src={slide.image} alt="" srcset="" />
+          <img src={slide.image} alt="" />
         </SwiperSlide>
       ))}
       </Swiper>
+    </AnimatedSection>
+     
     </>
   );
 }

@@ -2,87 +2,75 @@ import React from 'react';
 import Avtar from './component/Avatar';
 import Heading from './component/Heading';
 import Showcase from './component/Showcase';
-import {slidesData, slidesData2} from './data';
-
+import Query from './component/Querry';
+import CustomCursor from './component/CustomCursor';
+import Navbar from './component/Navbar';
+import About from './component/About';
+import SolarSystem from './view/milkyway/solarSystem';
 const App = () => {
+ 
+
   return (
-    <div className="bg-gray-50 min-h-screen font-sans">
+    <div className="glass-bg min-h-screen font-alliance relative">
+      <CustomCursor/>
+      {/* Galaxy Background Effects */}
+      <div className="galaxy-container">
+        {/* Star Field */}
+        <div className="star-field"></div>
+        
+        {/* Nebula Clouds */}
+        <div className="nebula nebula-1"></div>
+        <div className="nebula nebula-2"></div>
+        <div className="nebula nebula-3"></div>
+        
+        {/* Cosmic Particles */}
+        <div className="cosmic-particle"></div>
+        <div className="cosmic-particle"></div>
+        <div className="cosmic-particle"></div>
+        <div className="cosmic-particle"></div>
+        <div className="cosmic-particle"></div>
+        <div className="cosmic-particle"></div>
+        <div className="cosmic-particle"></div>
+        <div className="cosmic-particle"></div>
+        
+        {/* Glass Orbs */}
+        <div className="glass-orb"></div>
+        <div className="glass-orb"></div>
+        <div className="glass-orb"></div>
+        
+        {/* Shooting Stars */}
+        <div className="shooting-star"></div>
+        <div className="shooting-star"></div>
+      </div>
+      
       {/* Navbar */}
-      <nav className="bg-gradient-to-r from-blue-600 to-purple-600 p-4 shadow-lg text-white sticky top-0 z-50">
-        <div className="container mx-auto flex justify-between items-center">
-          <h1 className="text-2xl font-extrabold tracking-wide">Dev_Abhijeet</h1>
-          <ul className="flex space-x-6">
-            <li><a href="#about" className="hover:underline hover:text-gray-200 transition">About</a></li>
-            <li><a href="#projects" className="hover:underline hover:text-gray-200 transition">Projects</a></li>
-            <li><a href="#contact" className="hover:underline hover:text-gray-200 transition">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar />
+
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-center py-24">
-        <Avtar></Avtar>
-        <Heading></Heading>
+      <section className="relative text-center py-24 z-20">
+        <div className="absolute inset-0 glass-strong opacity-30"></div>
+        <div className="App relative z-10">
+         
+        </div>
+        <div className="relative z-10 hero-text">
+          <Avtar></Avtar>
+          <Heading></Heading>
+        </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="container mx-auto my-20 px-6">
-        <h3 className="text-3xl font-bold mb-6 text-gray-800">About Me</h3>
-        <p className="text-gray-700 text-lg leading-relaxed">
-          I’m a passionate developer with a love for the MERN stack and cloud computing. Whether it’s solving intricate problems or designing intuitive user interfaces, I’m always up for a challenge. Currently diving into AWS and building future-ready web applications.
-        </p>
-      </section>
+      <About />
+      
 
       {/* Projects Section */}
-      <section id="projects" className="bg-gray-100 py-20">
-        <div className="container mx-auto px-6">
-          <h3 className="text-3xl font-bold mb-10 text-center text-gray-800">My Projects</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Project 1 */}
-            <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition ">
-              <h4 className="text-xl font-bold mb-3">Mission 1 Million</h4>
-              <p className="text-gray-600">An online learning platform to empower 1 million learners with skill-based knowledge. Built using the MERN stack.</p>
-              <Showcase slides={slidesData} ></Showcase>
-              <a href="https://m1m.vercel.app/" target="_blank">
-              <button   className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-600 transition"  >Vist </button></a>
-            </div>
-            {/* Project 2 */}
-            <div className="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition">
-              <h4 className="text-xl font-bold mb-3">Portfolio Builder</h4>
-              <p className="text-gray-600">A customizable portfolio generator for developers. Includes live previews and deployment options.</p>
-              <Showcase slides={slidesData2} ></Showcase>
-              <a href="http://galasitsolutions.com/" target="_blank">
-              <button   className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-600 transition"  >Vist </button></a>
-
-            </div>
-
-          </div>
-        </div>
-      </section>
-
+        <SolarSystem/>
       {/* Contact Section */}
-      <section id="contact" className="container mx-auto my-20 px-6">
-        <h3 className="text-3xl font-bold mb-6 text-gray-800">Get In Touch</h3>
-        <form className="bg-white shadow-lg rounded-lg p-8">
-          <div className="mb-6">
-            <label className="block text-gray-700 mb-2 font-medium">Name</label>
-            <input type="text" className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400" placeholder="Your Name" />
-          </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 mb-2 font-medium">Email</label>
-            <input type="email" className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400" placeholder="Your Email" />
-          </div>
-          <div className="mb-6">
-            <label className="block text-gray-700 mb-2 font-medium">Message</label>
-            <textarea className="w-full p-3 border rounded-lg focus:ring-2 focus:ring-blue-400" rows="4" placeholder="Your Message"></textarea>
-          </div>
-          <button type="submit" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-3 rounded-lg shadow-md hover:from-blue-600 hover:to-purple-600 transition">Send Message</button>
-        </form>
-      </section>
+        <Query/>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-blue-600 to-purple-600 text-white py-6 text-center">
-        <p>&copy; 2025 Dev_Abhijeet. All rights reserved.</p>
+      <footer className=" py-6 text-center">
+        <p className="text-glass-white">&copy; 2026 Dev_Abhijeet. All rights reserved.</p>
       </footer>
     </div>
   );
